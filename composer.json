@@ -1,7 +1,7 @@
 {
-    "name": "nikaia/translation-sheet",
+    "name": "JustRaviga/translation-sheet",
     "description": "Laravel Translation via Google Spreadsheet",
-    "homepage": "https://github.com/nikaia/translation-sheet",
+    "homepage": "https://github.com/JustRaviga/translation-sheet",
     "license": "MIT",
     "authors": [
         {
