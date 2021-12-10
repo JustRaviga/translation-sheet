@@ -33,6 +33,14 @@ class Util
         $values = $values instanceof Collection ? $values : new Collection($values);
 
         return $values->map(function ($values) use ($keys) {
+            //Throw exception if if statement
+            if (count($keys) !== count($values)) {
+                throw new \Exception(
+                    'Keys quantity doesnt match.'
+                    .PHP_EOL.'Keys: '.implode(', ', $keys)
+                    .PHP_EOL.'Values: '.implode(', ', $values)
+                );
+            }
             return array_combine($keys, $values);
         });
     }
@@ -43,8 +51,10 @@ class Util
             return $value;
         }
 
-        return array_filter(array_map(function ($item) {
-            return trim($item);
-        }, explode(',', $value)));
+        return array_filter(
+            array_map(function ($item) {
+                return trim($item);
+            }, explode(',', $value))
+        );
     }
 }
